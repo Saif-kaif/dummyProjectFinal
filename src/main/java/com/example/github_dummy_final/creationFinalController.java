@@ -67,10 +67,12 @@ public class creationFinalController {
                         mianTableView.getItems().addAll(employee);
                     }
                 } catch (IOException e) {
+                    e.printStackTrace();
                     break;
                 }
             }
         } catch (Exception e) {
+            e.printStackTrace();
             return;
         }
     }
