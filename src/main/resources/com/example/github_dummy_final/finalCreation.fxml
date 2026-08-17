@@ -9,22 +9,24 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane fx:id="mainPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.github_dummy_final.creationFinalController">
-   <children>
-      <TableView fx:id="mianTableView" layoutX="14.0" layoutY="112.0" prefHeight="155.0" prefWidth="571.0">
-        <columns>
-          <TableColumn fx:id="nameTV" prefWidth="75.0" text="Name" />
-            <TableColumn fx:id="phoneNUmberTV" prefWidth="150.66668701171875" text="Phone Number " />
-            <TableColumn minWidth="0.0" prefWidth="0.0" text="C2" />
-            <TableColumn fx:id="genderTV" prefWidth="150.66668701171875" text="Gender" />
-            <TableColumn fx:id="dojTV" prefWidth="192.00002034505212" text="Date Of Joining " />
-        </columns>
-      </TableView>
-      <Button layoutX="28.0" layoutY="342.0" mnemonicParsing="false" onAction="#previousPageOA" text="Previous Page " />
-      <Button layoutX="488.0" layoutY="65.0" mnemonicParsing="false" onAction="#loadOA" text="Load " />
-      <Label layoutX="28.0" layoutY="27.0" text="name " />
-      <Label layoutX="300.0" layoutY="27.0" text="gender " />
-      <TextField fx:id="filterNameTF" layoutX="75.0" layoutY="23.0" />
-      <ComboBox fx:id="filterGenderCB" layoutX="361.0" layoutY="14.0" prefWidth="150.0" />
-   </children>
+<AnchorPane fx:id="mainPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.github_dummy_final.creationFinalController">
+    <children>
+        <TableView fx:id="mianTableView" layoutX="14.0" layoutY="112.0" prefHeight="155.0" prefWidth="571.0">
+            <columns>
+                <TableColumn fx:id="nameTV" prefWidth="75.0" text="Name"/>
+                <TableColumn fx:id="phoneNUmberTV" prefWidth="150.66668701171875" text="Phone Number "/>
+                <TableColumn minWidth="0.0" prefWidth="0.0" text="C2"/>
+                <TableColumn fx:id="genderTV" prefWidth="150.66668701171875" text="Gender"/>
+                <TableColumn fx:id="dojTV" prefWidth="192.00002034505212" text="Date Of Joining "/>
+            </columns>
+        </TableView>
+        <Button layoutX="28.0" layoutY="342.0" mnemonicParsing="false" onAction="#previousPageOA"
+                text="Previous Page "/>
+        <Button layoutX="488.0" layoutY="65.0" mnemonicParsing="false" onAction="#loadOA" text="Load "/>
+        <Label layoutX="28.0" layoutY="27.0" text="name "/>
+        <Label layoutX="300.0" layoutY="27.0" text="gender "/>
+        <TextField fx:id="filterNameTF" layoutX="75.0" layoutY="23.0"/>
+        <ComboBox fx:id="filterGenderCB" layoutX="361.0" layoutY="14.0" prefWidth="150.0"/>
+    </children>
 </AnchorPane>

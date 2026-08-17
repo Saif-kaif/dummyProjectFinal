@@ -15,8 +15,7 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.time.LocalDate;
 
-public class processionFinalController
-{
+public class processionFinalController {
     @javafx.fxml.FXML
     private TextField nameTF;
     @javafx.fxml.FXML
@@ -30,9 +29,10 @@ public class processionFinalController
 
     @javafx.fxml.FXML
     public void initialize() {
-        genderCB.getItems().addAll("Male","Female","Others");
+        genderCB.getItems().addAll("Male", "Female", "Others");
     }
-    public  void showAlert(String s){
+
+    public void showAlert(String s) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setContentText(s);
         alert.showAndWait();
@@ -41,38 +41,38 @@ public class processionFinalController
     @javafx.fxml.FXML
     public void addOA(ActionEvent actionEvent) {
 
-        if(nameTF.getText() == null || nameTF.getText().isEmpty()){
+        if (nameTF.getText() == null || nameTF.getText().isEmpty()) {
             showAlert("Name textField should be filled");
             return;
         }
-        String name ;
-        try{
+        String name;
+        try {
             name = nameTF.getText();
-        }catch (Exception e){
+        } catch (Exception e) {
             showAlert("Name textField should be a String");
             return;
         }
 
-        if(phnNUmTF.getText() == null || phnNUmTF.getText().isEmpty()){
+        if (phnNUmTF.getText() == null || phnNUmTF.getText().isEmpty()) {
             showAlert("Phone Number  textField should be filled");
             return;
         }
         int phoneNUmber;
-        try{
+        try {
             phoneNUmber = Integer.parseInt(phnNUmTF.getText());
-        }catch (NumberFormatException e ){
+        } catch (NumberFormatException e) {
             showAlert("Phone Number textField should be an integer");
             return;
         }
-        if(genderCB.getValue() == null ){
+        if (genderCB.getValue() == null) {
             showAlert("Gender combo BOx should be selected");
             return;
         }
-        if(dojDatePicker.getValue() == null){
+        if (dojDatePicker.getValue() == null) {
             showAlert("Date Picker  should be selected");
             return;
         }
-        if(dojDatePicker.getValue().isBefore(LocalDate.now())){
+        if (dojDatePicker.getValue().isBefore(LocalDate.now())) {
             showAlert(" select the date should not be past date or before the present date");
             return;
         }
@@ -90,16 +90,17 @@ public class processionFinalController
         FileOutputStream fos;
         ObjectOutputStream oos;
 
-        try{
-            if(file.exists()){
-                fos = new FileOutputStream(file,true);
+        try {
+            if (file.exists()) {
+                fos = new FileOutputStream(file, true);
                 oos = new AppendableObjectOutputStream(fos);
-            }else {
+            } else {
                 fos = new FileOutputStream(file);
                 oos = new ObjectOutputStream(fos);
-            }oos.writeObject(employee);
+            }
+            oos.writeObject(employee);
             oos.close();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return;
         }

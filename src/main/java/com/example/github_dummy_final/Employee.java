@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 public class Employee implements Serializable {
-    private  String name, gender;
+    private String name, gender;
     private int phoneNUmber;
     private LocalDate doj;
 

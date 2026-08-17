@@ -15,20 +15,19 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.time.LocalDate;
 
-public class creationFinalController
-{
+public class creationFinalController {
     @javafx.fxml.FXML
-    private TableColumn<Employee,Integer> phoneNUmberTV;
+    private TableColumn<Employee, Integer> phoneNUmberTV;
     @javafx.fxml.FXML
     private TextField filterNameTF;
     @javafx.fxml.FXML
-    private TableColumn<Employee,String> nameTV;
+    private TableColumn<Employee, String> nameTV;
     @javafx.fxml.FXML
     private TableView<Employee> mianTableView;
     @javafx.fxml.FXML
     private TableColumn<Employee, LocalDate> dojTV;
     @javafx.fxml.FXML
-    private TableColumn<Employee,String> genderTV;
+    private TableColumn<Employee, String> genderTV;
     @javafx.fxml.FXML
     private ComboBox<String> filterGenderCB;
     @javafx.fxml.FXML
@@ -38,7 +37,7 @@ public class creationFinalController
     public void initialize() {
         mianTableView.getItems().clear();
 
-        filterGenderCB.getItems().addAll("Male","Female","Other");
+        filterGenderCB.getItems().addAll("Male", "Female", "Other");
 
         nameTV.setCellValueFactory(new PropertyValueFactory<>("name"));
         genderTV.setCellValueFactory(new PropertyValueFactory<>("gender"));
@@ -56,22 +55,22 @@ public class creationFinalController
     @javafx.fxml.FXML
     public void loadOA(ActionEvent actionEvent) {
         mianTableView.getItems().clear();
-        try{
+        try {
             FileInputStream fis = new FileInputStream("employee.bin");
             ObjectInputStream ois = new ObjectInputStream(fis);
 
-            while (true){
+            while (true) {
                 try {
                     Employee employee = (Employee) ois.readObject();
-                    if(filterNameTF.getText().equals(employee.getName())
-                            && filterGenderCB.getValue().equals(employee.getGender())){
+                    if (filterNameTF.getText().equals(employee.getName())
+                            && filterGenderCB.getValue().equals(employee.getGender())) {
                         mianTableView.getItems().addAll(employee);
                     }
-                }catch (IOException e){
+                } catch (IOException e) {
                     break;
                 }
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             return;
         }
     }
